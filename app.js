@@ -10,9 +10,18 @@ var users = require('./routes/users');
 
 var app = express();
 
-// view engine setup
+// // view engine setup  (jade setup)
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'jade');
+
+
+///////////   html setup      ////////////
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+// Set EJS View Engine**
+app.set('view engine','ejs');
+// Set HTML engine**
+app.engine('html', require('ejs').renderFile);
+///////////         ////////////
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
